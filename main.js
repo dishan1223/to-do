@@ -3,6 +3,13 @@ document.addEventListener('DOMContentLoaded', () => {
   const listContainer = document.getElementById('list-container');
   const addButton = document.getElementById('add-btn');
 
+  // if the user pressed ENTER key the task still gets added
+  inputBox.addEventListener('keydown',function(event){
+    if(event.key === "Enter"){
+      addTask();
+    }
+  })
+
   function addTask() {
     if (inputBox.value === "") {
       alert("Input box is empty");
